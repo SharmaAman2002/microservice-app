@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ui-web-app:microservice
+spec:
+  selector:
+    app.kubernetes.io/name: ui-web-app:microservice
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 30022
+      targetPort: 8080
+   

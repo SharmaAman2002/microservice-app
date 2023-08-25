@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cart:microservice
+  labels:
+    app: cart:microservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cart:microservice
+  template:
+    metadata:
+      labels:
+        app: cart:microservice
+    spec:
+      containers:
+      - name: cart:microservice
+        image: 863804372452.dkr.ecr.us-east-1.amazonaws.com/cart:latest
+        ports:
+        - containerPort: 1004

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shoes:microservice
+  labels:
+    app: shoes:microservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shoes:microservice
+  template:
+    metadata:
+      labels:
+        app: shoes:microservice
+    spec:
+      containers:
+      - name: shoes:microservice
+        image: 863804372452.dkr.ecr.us-east-1.amazonaws.com/shoes:latest
+        ports:
+        - containerPort: 1002
